@@ -22,7 +22,13 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
+        'id_instansi',
     ];
+
+    public function instansi() {
+        return $this->belongsTo(Instansi::class, 'id_instansi');
+    }
 
     /**
      * The attributes that should be hidden for serialization.
