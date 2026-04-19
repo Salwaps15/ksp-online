@@ -24,6 +24,18 @@
                         {{ __('User Management') }}
                     </x-nav-link>
                     @endif
+
+                    @if(auth()->user()->role === 'sekolah')
+                    <x-nav-link :href="route('sekolah.pengajuan.index')" :active="request()->routeIs('sekolah.pengajuan.*')">
+                        {{ __('Pengajuan KSP') }}
+                    </x-nav-link>
+                    @endif
+
+                    @if(auth()->user()->role === 'verifikator')
+                    <x-nav-link :href="route('verifikator.pengajuan.index')" :active="request()->routeIs('verifikator.pengajuan.*')">
+                        {{ __('Verifikasi Masuk') }}
+                    </x-nav-link>
+                    @endif
                 </div>
             </div>
 
