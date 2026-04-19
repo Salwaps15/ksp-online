@@ -17,4 +17,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+use App\Http\Controllers\Admin\InstansiController;
+use App\Http\Controllers\Admin\UserController;
+
+Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::resource('instansi', InstansiController::class);
+    Route::resource('user', UserController::class);
+});
+
 require __DIR__.'/auth.php';
