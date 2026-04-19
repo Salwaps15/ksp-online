@@ -15,14 +15,15 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-            <div>
-                <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-[#f8fafc]">
+            <div class="mb-4">
+                <a href="/" class="flex flex-col items-center gap-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Lambang_Jawa_Timur.png" alt="Logo" class="h-20 w-auto">
+                    <span class="text-xl font-bold text-blue-900">KSP ONLINE</span>
                 </a>
             </div>
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+            <div class="w-full sm:max-w-md mt-6 px-8 py-8 bg-white shadow-xl overflow-hidden sm:rounded-2xl border border-gray-100">
                 {{ $slot }}
             </div>
         </div>
